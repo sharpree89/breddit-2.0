@@ -51,11 +51,12 @@ module.exports = {
   upvotePost: function(req, res, next) {
 
     req.post.upvote(function(err, post){
-      if (err) { return next(err); }
-
+      if (err) {
+        return next(err);
+      }
       res.json(post);
       console.log('the post has been upvoted');
     });
-
   }
+
 }
